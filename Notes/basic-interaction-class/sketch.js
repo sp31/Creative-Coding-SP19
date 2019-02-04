@@ -66,7 +66,7 @@ function keyPressed(){
   }else if (key == 'r'){
     backgroundColor = "red";
   }else{
-    backgroundColor = "green";
+    backgroundColor = "green";  
   }
 
 if(keyCode == 65){
