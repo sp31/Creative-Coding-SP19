@@ -8,6 +8,7 @@ var textFill = "#000000";
 var textStroke = "beige";
 var phoneOff = alpha(backgroundColor)
 
+
 function setup() {
   // put setup code here
   createCanvas(400,700);
@@ -66,21 +67,10 @@ stroke(141,176,232);
 rect(80,375,240,50,10);
 rect(80,450,240,50,10);
 
-// function mousePressed() {
-//   // Check if mouse is inside the circle
-//   let d = dist(mouseX, mouseY, 80, 375);
-//   if (d < 100) {
-//     // Pick new random color values
-//     buttonFill = "green";
-//     fill("blue")
-//       rect(80,375,240,50,10);
-//   }
-// }
-
 
 if (mouseIsPressed) {
-  let d = dist(mouseX, mouseY, 120,300);
-  if (d < 100) {
+  var d = dist(mouseX, mouseY, 120,300);
+  if (d < 150) {
     fill("blue")
     rect(80,375,240,50,10);
     } else {
