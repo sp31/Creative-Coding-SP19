@@ -1,4 +1,4 @@
-#Mystery City
+# Mystery City
 
 Thank you for accessing Mystery City. Mystery City is an interactive sketch application created using p5.js and contains elements utilized from Creative Commons assets.
 
