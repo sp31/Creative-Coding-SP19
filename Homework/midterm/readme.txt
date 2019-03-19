@@ -7,3 +7,5 @@ In this game, you are visiting a city that places you in the middle of a mystery
 Users should use the flashlight (cursor) to search the scenes in each stage before proceeding to the next stage and finally escaping Mystery City. 
 
 For any questions, comments, or suggestions, you may email stevepierre31@gmail.com.
+
+https://sp31.github.io/Creative-Coding-SP19/Homework/midterm/index.html

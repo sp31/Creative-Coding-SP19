@@ -1,3 +1,5 @@
+/* "Room Chaos Indoor Messy Mess" by levelord, "Hidden Express" by Tali Kimelman, "Shelf old stock container industry" by Deedee86, "flashlight" by conte magnus is licensed under CC BY-SA 2.0. To view a copy of this license, visit: https://creativecommons.org/licenses/by-sa/2.0*/
+
 var mysteryOne;
 var mysteryTwo;
 var mysteryThree;
