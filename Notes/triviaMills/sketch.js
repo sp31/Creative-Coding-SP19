@@ -1,23 +1,25 @@
-var questions = ["is Iceland covered in ice", "what ocean lies east of the US"];
-var options = ["1) true 2) false", "1)pacific 2) eastern 3) indian 4) atlantic"];
+var questions = ["Is Iceland always covered in ice?","What ocean lies to the east of US?"];
+var options = ["1) true  2) false","1) pacific 2) eastern 3) indian 4) atlantic"];
 var answers = [2,4];
 
-var answerCorrect = "";
-
-var currentOption = -1;
+var answer = "";
 
 var currentQuestion = 0;
 
-var button1, button2, button3, button4;
+var button1,button2,button3,button4;
+
+var currentOption = -1;
 
 var startTimer = false;
-var prevTimer = 0;
-var interval = 3000;
-
+var prevTime = 0;
+var interval = 5000;
+var rightWrong = false;
 
 function setup() {
   // put setup code here
   createCanvas(400,400);
+//  console.log(options[1].length);
+
   button1 = createButton("1");
   button1.position(10,300);
   button1.mousePressed(function(){
@@ -41,44 +43,55 @@ function setup() {
   button4.mousePressed(function(){
     currentOption = 4;
   });
+
 }
 
 function draw() {
   // put drawing code here
-  console.log(currentOption);
   background(255);
-  text(questions[currentQuestion],20,100);
-  text(options[currentQuestion],20,150);
 
-if (startTimer == true){
-  text(answerCorrect,20,250);
-  if(millis() - prevTimer >= interval){
-    //do something here
-    startTimer = false;
-    prevTimer = millis();
+  text(questions[currentQuestion], 20,100);
+
+  text(options[currentQuestion], 20,150);
+
+  if(startTimer == true){
+    text(answer, 20, 200);
+
+    if(millis() - prevTime >= interval){
+      startTimer = false;
+      prevTime = millis();
+    }
+
   }
-}
 
-  if(currentOption !=-1){
-    if (currentOption == answers[currentQuestion]){
-      //correct
-      console.log("correct");
-      answerCorrect = "Correct";
-      currentQuestion = currentQuestion + 1;
-
-//continuous loop after answering
-if(currentQuestion >= questions.length){
-  currentQuestion = 0;
-}
-
-}else{
-  //incorrect
-  console.log("incorrect");
-  answerCorrect = "Try again!";
+  if(currentQuestion == 0){
+    button3.hide();
+    button4.hide();
+  }else if(currentQuestion == 1){
+    button3.show();
+    button4.show();
   }
-  //resets the variable after pressing a button
-  currentOption = -1;
-  startTimer = true;
-  prevTimer = millis();
-}
+
+  if(currentOption != -1){
+    if(currentOption == answers[currentQuestion]){
+      console.log("Correct");
+      currentQuestion++;
+
+      if(currentQuestion >= questions.length){
+        currentQuestion = 0;
+      }
+      answer = "Correct";
+    }else{
+      console.log("Try Again");
+
+      answer = "Try Again";
+    }
+
+    currentOption = -1;
+    startTimer = true;
+    prevTime = millis();
+  }
+
+
+
 }
